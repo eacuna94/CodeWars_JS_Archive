@@ -1,13 +1,11 @@
 function comesAfter(str, l) {
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-    'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
-    'Y', 'Z'];
+  const letters = /^[A-Za-z]+$/;
 
   let newString = '';
 
   for (let i = 0; i < str.length; i++) {
     if (str[i] === l || str[i] === l.toUpperCase()) {
-      if (letters.includes(str[i + 1]) || letters.includes(str[i + 1].toUpperCase())) {
+      if (letters.test(str[i + 1])) {
         newString += str[i + 1];
         console.log(newString);
       }
@@ -18,3 +16,4 @@ function comesAfter(str, l) {
 }
 
 console.log(comesAfter("are you really learning Ruby?", 'r'));
+console.log(comesAfter("Pirates say arrrrrrrrr.", 'r'));
