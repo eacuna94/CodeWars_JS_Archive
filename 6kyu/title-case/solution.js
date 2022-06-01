@@ -1,0 +1,3 @@
+const titleCase = (title, minorWords) => {
+
+}
